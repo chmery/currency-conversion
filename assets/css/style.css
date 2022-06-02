@@ -29,4 +29,13 @@ main {
 }
 .converter__h1 {
   font-size: 1.5rem;
+}
+.converter__currencies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.converter__amount-div, .converter__from-div, .converter__to-div, .converter__result-div {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */

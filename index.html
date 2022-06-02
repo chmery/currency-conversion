@@ -15,10 +15,12 @@
     <div class="converter">
         <h1 class="converter__h1">Currency Converter</h1>
         <div class="converter__amount-div">
-            <label class="converter__label">Amount:<input type="number" id="amount" class="converter__input"></label>
+            <span class="converter__label">Amount:</span>
+            <input type="number" id="amount" class="converter__input">
         </div>
-        <div class="converter__from-div">
-            <label class="converter__label">From:
+        <div class="converter__currencies">
+            <div class="converter__from-div">
+                <span class="converter__label">From:</span>
                 <select name="from-currency" id="from" class="converter__select">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
@@ -29,10 +31,12 @@
                     <option value="CHF">CHF</option>
                     <option value="JPY">JPY</option>
                 </select>
-            </label>
-        </div>
-        <div class="converter__to-div">
-            <label class="converter__label">To:
+            </div>
+            <div class="converter__switch">
+                <button class="converter__switch-btn"><img src="assets/images/switch.svg" alt="switch icon"></button>
+            </div>
+            <div class="converter__to-div">
+                <span class="converter__label">To:</span>
                 <select name="to-currency" id="from" class="converter__select">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
@@ -43,10 +47,11 @@
                     <option value="CHF">CHF</option>
                     <option value="JPY">JPY</option>
                 </select>
-            </label>
+            </div>
         </div>
         <div class="converter__result-div">
-            <label class="converter__label">Result:<input type="number" id="result" class="converter__result"></label>
+            <span class="converter__label">Result:</span>
+            <input type="number" id="result" class="converter__result">
         </div>
         <button class="converter__btn">Convert</button>
     </div>

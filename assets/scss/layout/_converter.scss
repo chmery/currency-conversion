@@ -7,4 +7,15 @@
     &__h1 {
         font-size: 1.5rem;
     }
+
+    &__currencies {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__amount-div, &__from-div, &__to-div, &__result-div {
+        display: flex;
+        flex-direction: column;
+    }
 }
