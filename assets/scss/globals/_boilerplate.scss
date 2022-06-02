@@ -1,0 +1,18 @@
+@use "fonts" as *;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: $font;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

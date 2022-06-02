@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+<main>
+    <div class="converter">
+        <h1 class="converter__h1">Currency Converter</h1>
+        <div class="converter__amount-div">
+            <label class="converter__label">Amount:<input type="number" id="amount" class="converter__input"></label>
+        </div>
+        <div class="converter__from-div">
+            <label class="converter__label">From:
+                <select name="from-currency" id="from" class="converter__select">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="PLN">PLN</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </label>
+        </div>
+        <div class="converter__to-div">
+            <label class="converter__label">To:
+                <select name="to-currency" id="from" class="converter__select">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="PLN">PLN</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </label>
+        </div>
+        <div class="converter__result-div">
+            <label class="converter__label">Result:<input type="number" id="result" class="converter__result"></label>
+        </div>
+        <button class="converter__btn">Convert</button>
+    </div>
+</main>
+</body>
+</html>
