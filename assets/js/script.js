@@ -1,13 +1,38 @@
 const fromCurrency = document.getElementById('from');
 const toCurrency = document.getElementById('to');
 const amount = document.getElementById('amount');
-
 const result = document.getElementById('result');
 
 const switchBtn = document.querySelector('.converter__switch-img');
 
+const selectOne = document.querySelector('.converter__select-one');
+const selectTwo = document.querySelector('.converter__select-two');
+const selectImgOne = document.getElementById('select-img-one');
+const selectImgTwo = document.getElementById('select-img-two');
+
+
+const switchIconOne = () => {
+    if(selectImgOne.getAttribute('src') == "assets/images/down.svg") {
+        selectImgOne.src = "assets/images/up.svg";
+    } else {
+        selectImgOne.src = "assets/images/down.svg";
+   }
+}
+
+const switchIconTwo = () => {
+    if(selectImgTwo.getAttribute('src') == "assets/images/down.svg") {
+        selectImgTwo.src = "assets/images/up.svg";
+    } else {
+        selectImgTwo.src = "assets/images/down.svg";
+   }
+}
+
+selectOne.addEventListener('click', switchIconOne);
+selectTwo.addEventListener('click', switchIconTwo);
+
+
 const switchCurrencies = () => {
-    [fromCurrency.value, toCurrency.value] = [toCurrency.value, fromCurrency.value]
+    [fromCurrency.value, toCurrency.value] = [toCurrency.value, fromCurrency.value];
 }
 
 const convertCurrencies = () => {
