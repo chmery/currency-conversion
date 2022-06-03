@@ -33,15 +33,15 @@
                 </select>
             </div>
             <div class="converter__switch-div">
-                <button class="converter__switch-btn"><img src="assets/images/switch.svg" alt="switch icon" class="converter__switch-img"></button>
+                <button class="converter__switch-btn" onclick="switchCurrencies()"><img src="assets/images/switch.svg" alt="switch icon" class="converter__switch-img"></button>
             </div>
             <div class="converter__to-div">
                 <span class="converter__label">To:</span>
-                <select name="to-currency" id="from" class="converter__select">
+                <select name="to-currency" id="to" class="converter__select">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
-                    <option value="PLN">PLN</option>
+                    <option value="PLN" selected="selected">PLN</option>
                     <option value="AUD">AUD</option>
                     <option value="CAD">CAD</option>
                     <option value="CHF">CHF</option>
@@ -51,12 +51,13 @@
         </div>
         <div class="converter__result-div">
             <span class="converter__label">Result:</span>
-            <span id="result" class="converter__result">
+            <input type="number" id="result" class="converter__result"></input>
         </div>
         <div class="converter__btn-div">
-            <button class="converter__btn">Convert<img src="assets/images/right.svg" class="converter__btn-img"></button>
+            <button class="converter__btn" onclick="convertCurrencies()">Convert<img src="assets/images/right.svg" class="converter__btn-img"></button>
         </div>
     </div>
+    <script src="/assets/js/script.js"></script>
 </main>
 </body>
 </html>
