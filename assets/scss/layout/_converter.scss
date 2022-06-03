@@ -1,21 +1,123 @@
+@use "../globals/fonts" as *;
+
+input, select {
+    outline: none;
+}
+
+input {
+    padding-left: 0.8em;
+}
+
+select {
+    padding-left: 0.3em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .converter {
     border: 1px solid var(--border-color);
     border-radius: 30px;
     box-shadow: 0px 0px 29px -13px #D4D4D4;
-    margin-top: 10%;
+    padding: 2em;
+    width: 350px;
+    min-width: 280px;
+    min-height: 370px;
+    margin: 15em 3em;
 
     &__h1 {
-        font-size: 1.5rem;
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 0px;
+        margin-bottom: 1em;
+    }
+    
+    &__label {
+        font-size: $input-name;
+        color: var(--lighter-font);
+        margin-bottom: 0.5em;
+    }
+
+    &__input, &__result, &__select {
+        height: 2.7em;
+        border: 1px solid var(--border-color);
+        border-radius: 0.8em;
     }
 
     &__currencies {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        column-gap: 1em;
     }
 
     &__amount-div, &__from-div, &__to-div, &__result-div {
+        margin-bottom: 1em;
         display: flex;
         flex-direction: column;
+    }
+
+    &__from-div, &__to-div {
+        width: 8em;
+    }
+
+    &__switch-div {
+        display: flex;
+        justify-content: center;
+        width: 2em;
+    }
+
+    &__switch-btn {
+        border: none;
+        background-color: #fff;
+    }
+
+    &__switch-img {
+        height: 1.7em;
+        transition: height 0.2s;
+    }
+
+    &__switch-img:hover {
+        height: 2.1em;
+        cursor: pointer;
+    }
+
+    &__btn-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5em;
+        color: var(--darker-font);
+        font-weight: 600;
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 5em;
+        padding: 1em 2em;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    &__btn-img {
+        padding-left: 0.5em;
+        height: 1.5em;
+        color: #000;
+        transition: color 0.2s, padding-left 0.2s;
+    }
+
+    &__btn:hover {
+        cursor: pointer;
+        background-color: var(--darker-font);
+        color: #fff;
+    }
+
+    &__btn:hover > &__btn-img {
+        filter: invert(100%) sepia(4%) saturate(9%) hue-rotate(57deg) brightness(104%) contrast(100%);
     }
 }

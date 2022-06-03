@@ -32,8 +32,8 @@
                     <option value="JPY">JPY</option>
                 </select>
             </div>
-            <div class="converter__switch">
-                <button class="converter__switch-btn"><img src="assets/images/switch.svg" alt="switch icon"></button>
+            <div class="converter__switch-div">
+                <button class="converter__switch-btn"><img src="assets/images/switch.svg" alt="switch icon" class="converter__switch-img"></button>
             </div>
             <div class="converter__to-div">
                 <span class="converter__label">To:</span>
@@ -51,9 +51,11 @@
         </div>
         <div class="converter__result-div">
             <span class="converter__label">Result:</span>
-            <input type="number" id="result" class="converter__result">
+            <span id="result" class="converter__result">
         </div>
-        <button class="converter__btn">Convert</button>
+        <div class="converter__btn-div">
+            <button class="converter__btn">Convert<img src="assets/images/right.svg" class="converter__btn-img"></button>
+        </div>
     </div>
 </main>
 </body>
