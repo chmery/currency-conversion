@@ -1,39 +1,48 @@
-const fromCurrency = document.getElementById('from');
-const toCurrency = document.getElementById('to');
-const amount = document.getElementById('amount');
-const result = document.getElementById('result');
+const fromCurrency = document.querySelector('#from');
+const toCurrency = document.querySelector('#to');
+const amount = document.querySelector('#amount');
+const result = document.querySelector('#result');
 
-const switchBtn = document.querySelector('.converter__switch-img');
+const switchBtn = document.querySelector('.converter__switch-btn');
 
 const selectOne = document.querySelector('.converter__select-one');
 const selectTwo = document.querySelector('.converter__select-two');
-const selectImgOne = document.getElementById('select-img-one');
-const selectImgTwo = document.getElementById('select-img-two');
+const selectImgOne = document.querySelector('#select-img-one');
+const selectImgTwo = document.querySelector('#select-img-two');
 
+const arrowUp = "assets/images/up.svg";
+const arrowDown = "assets/images/down.svg";
 
-const switchIconOne = () => {
-    if(selectImgOne.getAttribute('src') == "assets/images/down.svg") {
-        selectImgOne.src = "assets/images/up.svg";
+const switchIcon = (x) => {
+    if(x.getAttribute('src') == arrowDown) {
+        x.src = arrowUp;
     } else {
-        selectImgOne.src = "assets/images/down.svg";
-   }
+        x.src = arrowDown;
+    }
 }
 
-const switchIconTwo = () => {
-    if(selectImgTwo.getAttribute('src') == "assets/images/down.svg") {
-        selectImgTwo.src = "assets/images/up.svg";
-    } else {
-        selectImgTwo.src = "assets/images/down.svg";
-   }
-}
+selectOne.addEventListener('click', function(){switchIcon(selectImgOne)});
+selectTwo.addEventListener('click', function(){switchIcon(selectImgTwo)});
 
-selectOne.addEventListener('click', switchIconOne);
-selectTwo.addEventListener('click', switchIconTwo);
+window.addEventListener('click', function(e){
+    const imgOneSrc = selectImgOne.getAttribute('src');
+    const imgTwoSrc = selectImgTwo.getAttribute('src');
 
+    if(e.target != selectOne && e.target == selectTwo && imgTwoSrc == arrowUp) {
+        selectImgOne.src = arrowDown;
+    } else if(e.target != selectTwo && e.target == selectOne && imgTwoSrc == arrowUp) {
+        selectImgTwo.src = arrowDown;
+    } else if(e.target != selectOne && e.target != selectTwo) {
+        selectImgOne.src = arrowDown;
+        selectImgTwo.src = arrowDown;
+    }
+})
 
 const switchCurrencies = () => {
     [fromCurrency.value, toCurrency.value] = [toCurrency.value, fromCurrency.value];
 }
+
+switchBtn.addEventListener('click', function(){switchCurrencies()})
 
 const convertCurrencies = () => {
     const fromCurrencyValue = fromCurrency.value;
