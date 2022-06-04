@@ -22,7 +22,7 @@
             <div class="converter__from-div">
                 <span class="converter__label">From:</span>
                 <img src="assets/images/down.svg" alt="drop down icon" class="converter__select-img" id="select-img-one">
-                <select name="from-currency" id="from" class="converter__select-one">
+                <select name="from-currency" id="from" class="converter__select-one" onchange="lostFocus(selectOne)">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
@@ -39,7 +39,7 @@
             <div class="converter__to-div">
                 <span class="converter__label">To:</span>
                 <img src="assets/images/down.svg" alt="drop down icon" class="converter__select-img" id="select-img-two">
-                <select name="to-currency" id="to" class="converter__select-two">
+                <select name="to-currency" id="to" class="converter__select-two" onchange="lostFocus(selectTwo)"> 
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
