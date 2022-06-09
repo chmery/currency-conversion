@@ -31,8 +31,9 @@ window.addEventListener('click', switchSelectIcon);
 
 const switchCurrencies = () => {
     [fromCurrencySelect.value, toCurrencySelect.value] = [toCurrencySelect.value, fromCurrencySelect.value];
+    if (amount.value != 0){
     exchangeCurrencies();
-};
+}};
 
 const exchangeCurrencies = () => {
     const fromCurrencySelectValue = (fromCurrencySelect.value).toLowerCase();
