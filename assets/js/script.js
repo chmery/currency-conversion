@@ -1,56 +1,58 @@
-const fromCurrency = document.querySelector('#from');
-const toCurrency = document.querySelector('#to');
+const fromCurrencySelect = document.querySelector('#from');
+const toCurrencySelect = document.querySelector('#to');
 const amount = document.querySelector('#amount');
-const result = document.querySelector('#result');
+const currencyExchangeResult = document.querySelector('#currency-exchange-result');
 
-const switchBtn = document.querySelector('.converter__switch-btn');
+const switchBtn = document.querySelector('.exchange__switch-btn');
+const exchangeBtn = document.querySelector('.exchange__btn');
 
-const selectOne = document.querySelector('.converter__select-one');
-const selectTwo = document.querySelector('.converter__select-two');
-const selectImgOne = document.querySelector('#select-img-one');
-const selectImgTwo = document.querySelector('#select-img-two');
+const fromCurrencySelectImg = document.querySelector('#select-img-one');
+const toCurrencySelectImg = document.querySelector('#select-img-two');
 
 const arrowUp = "assets/images/up.svg";
 const arrowDown = "assets/images/down.svg";
 
-const switchIcon = () => {
-    if (document.activeElement === selectOne) {
-        selectImgOne.src = arrowUp
-        selectImgTwo.src = arrowDown
-    } else if (document.activeElement === selectTwo) {
-        selectImgOne.src = arrowDown
-        selectImgTwo.src = arrowUp
+const switchSelectIcon = () => {
+    if (document.activeElement === fromCurrencySelect) {
+        fromCurrencySelectImg.src = arrowUp;
+        toCurrencySelectImg.src = arrowDown;
+    } else if (document.activeElement === toCurrencySelect) {
+        fromCurrencySelectImg.src = arrowDown;
+        toCurrencySelectImg.src = arrowUp;
     } else {
-        selectImgOne.src = arrowDown
-        selectImgTwo.src = arrowDown
+        fromCurrencySelectImg.src = arrowDown;
+        toCurrencySelectImg.src = arrowDown;
     }
-} 
+};
 
-const lostFocus = (x) => {
-    x.blur()
-}
+const lostFocus = select => select.blur();
 
-window.addEventListener('click', switchIcon)
+window.addEventListener('click', switchSelectIcon);
 
 const switchCurrencies = () => {
-    [fromCurrency.value, toCurrency.value] = [toCurrency.value, fromCurrency.value];
-}
+    [fromCurrencySelect.value, toCurrencySelect.value] = [toCurrencySelect.value, fromCurrencySelect.value];
+    exchangeCurrencies();
+};
 
-switchBtn.addEventListener('click', switchCurrencies)
+const exchangeCurrencies = () => {
+    const fromCurrencySelectValue = (fromCurrencySelect.value).toLowerCase();
+    const toCurrencySelectValue = (toCurrencySelect.value).toLowerCase();
 
-const convertCurrencies = () => {
-    const fromCurrencyValue = fromCurrency.value;
-    const toCurrencyValue = toCurrency.value;
+    const exchangeOperation = data => (data[toCurrencySelectValue] * amount.value).toFixed(2);
 
-    const requestURL = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + fromCurrencyValue.toLowerCase() + '/' + toCurrencyValue.toLowerCase() + '.json';
-    const request = new XMLHttpRequest();
-    request.open ('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
+    if (amount.value == 0){
+        alert("The amount field can't be empty!");
+    } else {         
+        fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + fromCurrencySelectValue + '/' + toCurrencySelectValue + '.json')
+            .then(response => response.json())
+            .then(data => {
+                let exchangeValue = exchangeOperation(data);
+                currencyExchangeResult.value = exchangeValue;
+            });
+    }
+};
 
-    request.onload = function() {
-        const response = request.response;
-        value = (response[toCurrencyValue.toLowerCase()] * amount.value).toFixed(2);
-        result.value = value;
-    }  
-}
+switchBtn.addEventListener('click', switchCurrencies);
+exchangeBtn.addEventListener('click', exchangeCurrencies);
+
+    

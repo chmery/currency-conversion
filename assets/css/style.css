@@ -43,7 +43,7 @@ select {
           appearance: none;
 }
 
-.converter {
+.exchange {
   border: 1px solid var(--border-color);
   border-radius: 30px;
   box-shadow: 0px 0px 29px -13px #d4d4d4;
@@ -53,78 +53,75 @@ select {
   min-height: 100%;
   margin: 14em 1em;
 }
-.converter__h1 {
+.exchange__h1 {
   text-align: center;
   font-size: 1.1rem;
   margin-top: 0px;
   margin-bottom: 1em;
 }
-.converter__label {
+.exchange__label {
   font-size: 0.8rem;
   color: var(--lighter-font);
   margin-bottom: 0.5em;
 }
-.converter__input, .converter__result, .converter__select-one, .converter__select-two {
+.exchange__input, .exchange__select {
   padding: 0 0.8em;
   height: 45px;
   border: 1px solid var(--border-color);
   border-radius: 0.8em;
   box-sizing: border-box;
+  width: 100%;
 }
-.converter__currencies {
+.exchange__currencies {
   display: flex;
   justify-content: space-between;
   align-items: center;
   -moz-column-gap: 1em;
        column-gap: 1em;
 }
-.converter__amount-div, .converter__from-div, .converter__to-div, .converter__result-div {
+.exchange__amount, .exchange__from, .exchange__to, .exchange__result {
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
-.converter__from-div, .converter__to-div {
+.exchange__from, .exchange__to {
   width: 8em;
   position: relative;
 }
-.converter__select-one, .converter__select-two {
+.exchange__select {
   position: relative;
   cursor: pointer;
   background-color: transparent;
   z-index: 5;
 }
-.converter__select-img {
+.exchange__select-img {
   position: absolute;
   z-index: 1;
   right: 10%;
   top: 50%;
 }
-.converter__result {
-  display: flex;
-  align-items: center;
-}
-.converter__switch-div {
+.exchange__switch {
   display: flex;
   justify-content: center;
   width: 2em;
 }
-.converter__switch-btn {
+.exchange__switch-btn {
   border: none;
   background-color: #fff;
 }
-.converter__switch-img {
+.exchange__switch-img {
   height: 1.7em;
   transition: height 0.2s;
 }
-.converter__switch-img:hover {
+.exchange__switch-img:hover {
   height: 2.1em;
   cursor: pointer;
 }
-.converter__btn-div {
+.exchange__button {
   display: flex;
   justify-content: center;
 }
-.converter__btn {
+.exchange__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,17 +134,17 @@ select {
   padding: 1em 2em;
   transition: background-color 0.2s, color 0.2s;
 }
-.converter__btn-img {
+.exchange__btn-img {
   margin-left: 0.5em;
   height: 1.5em;
   color: #000;
   transition: 0.2s;
 }
-.converter__btn:hover {
+.exchange__btn:hover {
   cursor: pointer;
   background-color: var(--darker-font);
   color: #fff;
 }
-.converter__btn:hover > .converter__btn-img {
+.exchange__btn:hover > .exchange__btn-img {
   filter: invert(100%) sepia(4%) saturate(9%) hue-rotate(57deg) brightness(104%) contrast(100%);
 }/*# sourceMappingURL=style.css.map */
