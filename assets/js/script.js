@@ -12,22 +12,37 @@ const toCurrencySelectImg = document.querySelector('#select-img-two');
 const arrowUp = "assets/images/up.svg";
 const arrowDown = "assets/images/down.svg";
 
+let fromCurrencySelectOpened = false;
+let toCurrencySelectOpened = false;
+
 const switchSelectIcon = () => {
     if (document.activeElement === fromCurrencySelect) {
         fromCurrencySelectImg.src = arrowUp;
         toCurrencySelectImg.src = arrowDown;
+        toCurrencySelectOpened = false;
     } else if (document.activeElement === toCurrencySelect) {
         fromCurrencySelectImg.src = arrowDown;
         toCurrencySelectImg.src = arrowUp;
+        fromCurrencySelectOpened = false;
     } else {
         fromCurrencySelectImg.src = arrowDown;
+        toCurrencySelectImg.src = arrowDown;
+        fromCurrencySelectOpened = false;
+        toCurrencySelectOpened = false;
+    }
+
+    if(fromCurrencySelectOpened == false) {
+        fromCurrencySelectImg.src = arrowDown;
+    } 
+
+    if(toCurrencySelectOpened == false) {
         toCurrencySelectImg.src = arrowDown;
     }
 };
 
-const lostFocus = select => select.blur();
-
 window.addEventListener('click', switchSelectIcon);
+fromCurrencySelect.addEventListener('click', () => fromCurrencySelectOpened = !fromCurrencySelectOpened);
+toCurrencySelect.addEventListener('click', () => toCurrencySelectOpened = !toCurrencySelectOpened);
 
 const switchCurrencies = () => {
     [fromCurrencySelect.value, toCurrencySelect.value] = [toCurrencySelect.value, fromCurrencySelect.value];
@@ -56,4 +71,3 @@ const exchangeCurrencies = () => {
 switchBtn.addEventListener('click', switchCurrencies);
 exchangeBtn.addEventListener('click', exchangeCurrencies);
 
-    
