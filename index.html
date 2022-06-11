@@ -1,65 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400;500&family=Sora:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Currency Exchange</title>
-</head>
-<body>
-<main>
-    <div class="exchange">
-        <h1 class="exchange__h1">Currency Exchange</h1>
-        <div class="exchange__amount">
-            <span class="exchange__label">Amount:</span>
-            <input class="exchange__input" id="amount" type="number">
-        </div>
-        <div class="exchange__currencies">
-            <div class="exchange__from">
-                <span class="exchange__label">From:</span>
-                <img src="assets/images/down.svg" alt="drop down icon" class="exchange__select-img" id="select-img-one">
-                <select class="exchange__select" id="from" name="from-currency">
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="PLN">PLN</option>
-                    <option value="AUD">AUD</option>
-                    <option value="CAD">CAD</option>
-                    <option value="CHF">CHF</option>
-                    <option value="JPY">JPY</option>
-                </select>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400;500&family=Sora:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <title>Currency Exchange</title>
+    </head>
+    <body>
+        <main>
+            <div class="exchange">
+                <h1 class="exchange__h1">Currency Exchange</h1>
+                <div class="exchange__amount">
+                    <span class="exchange__label">Amount:</span>
+                    <input class="exchange__input" id="amount" type="number" />
+                </div>
+                <div class="exchange__currencies">
+                    <div class="exchange__from">
+                        <span class="exchange__label">From:</span>
+                        <img
+                            class="exchange__select-img"
+                            id="select-img-one"
+                            src="assets/images/down.svg"
+                            alt="drop down icon"
+                        />
+                        <select class="exchange__select" id="from" name="from-currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="PLN">PLN</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                    </div>
+                    <div class="exchange__switch">
+                        <button class="exchange__switch-btn">
+                            <img src="assets/images/switch.svg" alt="switch icon" class="exchange__switch-img" />
+                        </button>
+                    </div>
+                    <div class="exchange__to">
+                        <span class="exchange__label">To:</span>
+                        <img
+                            class="exchange__select-img"
+                            id="select-img-two"
+                            src="assets/images/down.svg"
+                            alt="drop down icon"
+                        />
+                        <select class="exchange__select" id="to" name="to-currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="PLN" selected="selected">PLN</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="JPY">JPY</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="exchange__result">
+                    <span class="exchange__label">Result:</span>
+                    <input class="exchange__input" id="currency-exchange-result" type="number" />
+                </div>
+                <div class="exchange__button">
+                    <button class="exchange__btn">
+                        Convert<img class="exchange__btn-img" src="assets/images/right.svg" />
+                    </button>
+                </div>
             </div>
-            <div class="exchange__switch">
-                <button class="exchange__switch-btn"><img src="assets/images/switch.svg" alt="switch icon" class="exchange__switch-img"></button>
-            </div>
-            <div class="exchange__to">
-                <span class="exchange__label">To:</span>
-                <img src="assets/images/down.svg" alt="drop down icon" class="exchange__select-img" id="select-img-two">
-                <select class="exchange__select" id="to" name="to-currency"> 
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="PLN" selected="selected">PLN</option>
-                    <option value="AUD">AUD</option>
-                    <option value="CAD">CAD</option>
-                    <option value="CHF">CHF</option>
-                    <option value="JPY">JPY</option>
-                </select>
-            </div>
-        </div>
-        <div class="exchange__result">
-            <span class="exchange__label">Result:</span>
-            <input class="exchange__input" id="currency-exchange-result" type="number"></input>
-        </div>
-        <div class="exchange__button">
-            <button class="exchange__btn">Convert<img src="assets/images/right.svg" class="exchange__btn-img"></button>
-        </div>
-    </div>
-    <script src="assets/js/script.js"></script>
-</main>
-</body>
+            <script src="assets/js/script.js"></script>
+        </main>
+    </body>
 </html>
